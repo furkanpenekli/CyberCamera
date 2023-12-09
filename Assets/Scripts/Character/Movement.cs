@@ -43,8 +43,6 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //speed parameter changes animation speed
-        _animationSpeed = Mathf.Abs((speed * 0.8f) * _firstAnimationSpeed);
         GetComponent<Animator>().SetFloat("AnimationSpeed", _animationSpeed);
         CheckIsGrounded();
         Walk();
