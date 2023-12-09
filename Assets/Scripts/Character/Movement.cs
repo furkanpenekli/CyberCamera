@@ -35,12 +35,6 @@ public class Movement : MonoBehaviour
             Debug.LogError("Ground Check Transform not assigned!");
         }
     }
-
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         GetComponent<Animator>().SetFloat("AnimationSpeed", _animationSpeed);
