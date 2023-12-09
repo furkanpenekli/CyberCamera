@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 2f;
-    public float jumpForce = 3f;
+    public float speed;
+    public float jumpForce;
     [SerializeField]
     private Transform _groundCheck;
     [SerializeField]
@@ -13,8 +14,10 @@ public class Movement : MonoBehaviour
     private Animator _animator;
     [SerializeField]
     private float _animationSpeed = 0.1f;
+    private float _firstAnimationSpeed;
     private bool isGrounded;
 
+    [NonSerialized]
     public float horizontalSpeed = 0f;
 
     [SerializeField]
@@ -22,6 +25,8 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        _firstAnimationSpeed = _animationSpeed;
+
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -33,20 +38,22 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        //speed parameter changes animation speed
+        _animationSpeed = Mathf.Abs((speed * 0.8f) * _firstAnimationSpeed);
         GetComponent<Animator>().SetFloat("AnimationSpeed", _animationSpeed);
         CheckIsGrounded();
         Walk();
-        Flip();
+        FlipFace();
     }
 
     private void CheckIsGrounded()
     {
+        //a point checks moveable character is grounded
         isGrounded = Physics2D.OverlapCircle(_groundCheck.position, 0.1f, _groundLayer);
     }
 
-    public void Flip()
+    public void FlipFace()
     {
-       
         if (horizontalSpeed > 0 && !_facingRight)
         {
             _facingRight = true;
