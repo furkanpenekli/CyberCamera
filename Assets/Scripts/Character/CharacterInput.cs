@@ -6,8 +6,12 @@ public class CharacterInput : MonoBehaviour
 {
     [SerializeField]
     private KeyCode _interactInput;
+    [SerializeField]
+    private KeyCode _hideInput;
+
     private Movement _movement;
     private Player _player;
+    private Hideable _hideable;
     void Start()
     {
         _movement = GetComponent<Movement>();
@@ -17,6 +21,14 @@ public class CharacterInput : MonoBehaviour
     {
         HorizontalInput();
         InteractDialogue();
+    }
+
+    private void HideInput()
+    {
+        if (Input.GetKeyDown(_hideInput))
+        {
+            _hideable.SetHidden(!_hideable.GetHidden());
+        }
     }
 
     private void HorizontalInput()
