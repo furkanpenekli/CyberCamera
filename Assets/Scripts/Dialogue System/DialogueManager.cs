@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using static Dialogue;
@@ -18,11 +19,13 @@ public class DialogueManager : MonoBehaviour
     private bool _isActive = false;
     private void Update()
     {
+        // Check if the 'E' key is pressed and the '_isActive' flag is true
         if (Input.GetKeyDown(KeyCode.E) && _isActive)
         {
             NextMassage();
         }
 
+        // Set the active state of the current game object based on the '_isActive' flag
         gameObject.SetActive(_isActive);
     }
 

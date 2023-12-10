@@ -29,3 +29,14 @@ public class AmountQuest : Quest
         currentItemCount = 0;
     }
 }
+
+public class ExploreAreaQuest : Quest
+{
+    public Transform areaPointToExplore;
+
+    public ExploreAreaQuest(string name, string desc, int requiredItemCount, Transform areaPoint)
+        : base(name, desc)
+    {
+        areaPointToExplore = areaPoint;
+    }
+}
