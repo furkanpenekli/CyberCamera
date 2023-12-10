@@ -15,7 +15,12 @@ public class DialogueManager : MonoBehaviour
     Actor[] currentActors;
     int activeDialougeText = 0;
 
-    public static bool isActive = false;
+    private bool _isActive = false;
+    public bool isActive
+    {
+        get { return _isActive; }
+    }
+
 
     public void OpenDialogue(DialogueText[] dialogueTexts, Actor[] actors)
     {
@@ -23,7 +28,7 @@ public class DialogueManager : MonoBehaviour
         currentActors = actors;
         activeDialougeText = 0;
 
-        isActive = true;
+        _isActive = true;
 
         Debug.Log("Started dialogue.Loaded dialogue texts" + currentDialogueTexts);
         DisplayDialogueText();
@@ -42,13 +47,14 @@ public class DialogueManager : MonoBehaviour
     public void NextMassage()
     {
         activeDialougeText++;
+        
         if (activeDialougeText < currentDialogueTexts.Length)
         {
             DisplayDialogueText();
         }
         else
         {
-            isActive = false;
+            _isActive = false;
             Debug.Log("Dialogue ended!");
         }
     }
