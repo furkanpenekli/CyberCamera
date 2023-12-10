@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Hideable : MonoBehaviour
 {
-    private bool _hidden = false;
+    [SerializeField]
+    private bool _hideable = false;
     void Start()
     {
         
@@ -16,11 +17,11 @@ public class Hideable : MonoBehaviour
 
     public bool GetHidden() 
     {
-        return _hidden;
+        return _hideable;
     }
     public void SetHidden(bool value)
     {
-        _hidden = value;
+        _hideable = value;
     }
 
 }

@@ -7,25 +7,24 @@ public class CharacterInput : MonoBehaviour
     [SerializeField]
     private KeyCode _interactInput;
     [SerializeField]
-    private KeyCode _hideInput;
+    private KeyCode _hideableInput;
 
     private Movement _movement;
-    private Player _player;
     private Hideable _hideable;
     void Start()
     {
         _movement = GetComponent<Movement>();
-        _player = GetComponent<Player>();
+        _hideable = GetComponent<Hideable>();
     }
     void Update()
     {
         HorizontalInput();
-        InteractDialogue();
+        HideInput();
     }
 
     private void HideInput()
     {
-        if (Input.GetKeyDown(_hideInput))
+        if (Input.GetKeyDown(_hideableInput))
         {
             _hideable.SetHidden(!_hideable.GetHidden());
         }
@@ -37,13 +36,6 @@ public class CharacterInput : MonoBehaviour
         if (_movement != null)
         {
             _movement.horizontalSpeed = horizontalInput;
-        }
-    }
-    private void InteractDialogue()
-    {
-        if (Input.GetKeyDown(_interactInput))
-        {
-            _player.InteractDialogue();
         }
     }
 }
