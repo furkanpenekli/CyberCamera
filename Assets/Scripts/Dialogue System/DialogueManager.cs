@@ -21,7 +21,9 @@ public class DialogueManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && _isActive)
         {
             NextMassage();
-        }    
+        }
+
+        gameObject.SetActive(_isActive);
     }
 
     public void OpenDialogue(DialogueText[] dialogueTexts, Actor[] actors)
