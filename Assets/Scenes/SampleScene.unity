@@ -2048,6 +2048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363dff265b1122948a98ff39e195f904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  concealment: 0
 --- !u!61 &292200299
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3244,6 +3245,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5558588071998969235, guid: da2ebcfe3c6e231458995890cd2b3103, type: 3}
       propertyPath: _hideInput
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 5558588071998969235, guid: da2ebcfe3c6e231458995890cd2b3103, type: 3}
+      propertyPath: _hideableInput
       value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 5558588071998969235, guid: da2ebcfe3c6e231458995890cd2b3103, type: 3}

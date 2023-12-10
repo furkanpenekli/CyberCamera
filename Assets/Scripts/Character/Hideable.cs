@@ -8,7 +8,7 @@ public class Hideable : MonoBehaviour
     private bool _hideable = false;
     void Start()
     {
-        
+          
     }
     void Update()
     {
