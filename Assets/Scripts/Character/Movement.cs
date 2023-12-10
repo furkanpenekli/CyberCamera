@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     private Animator _animator;
     [SerializeField]
     private float _animationSpeed = 0.1f;
+    private float _firstAnimationSpeed;
     private bool isGrounded;
 
     [NonSerialized]
@@ -22,13 +23,13 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private bool _facingRight;
 
-    private Hideable _hideable;
     void Start()
     {
+        _firstAnimationSpeed = _animationSpeed;
+
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _hideable = GetComponent<Hideable>();
         if (_groundCheck == null)
         {
             Debug.LogError("Ground Check Transform not assigned!");
@@ -36,16 +37,10 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        _animator.SetFloat("AnimationSpeed", _animationSpeed);
+        GetComponent<Animator>().SetFloat("AnimationSpeed", _animationSpeed);
         CheckIsGrounded();
         Walk();
         FlipFace();
-        Hide();
-    }
-
-    public void Hide()
-    {
-        _animator.SetBool("Hideable", _hideable.GetHidden());
     }
 
     private void CheckIsGrounded()
