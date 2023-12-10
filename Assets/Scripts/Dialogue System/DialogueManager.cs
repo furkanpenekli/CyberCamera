@@ -48,7 +48,8 @@ public class DialogueManager : MonoBehaviour
     public void NextMassage()
     {
         activeDialougeText++;
-        if (activeDialougeText < currentDialogueTexts.Length && _isActive)
+        //last dialogue text can be display if base dialogue already read => currentDialogueTexts.Length - 1
+        if (activeDialougeText < currentDialogueTexts.Length - 1 && _isActive)
         {
             DisplayDialogueText();
         }
