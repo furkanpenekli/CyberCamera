@@ -19,6 +19,7 @@ public class Quest
     }
 }
 
+[System.Serializable]
 public class AmountQuest : Quest
 {
     public int requiredItemCount;
@@ -30,6 +31,7 @@ public class AmountQuest : Quest
     }
 }
 
+[System.Serializable]
 public class ExploreAreaQuest : Quest
 {
     public Transform areaPointToExplore;

@@ -8,14 +8,14 @@ public class QuestManager : MonoBehaviour
     public List<Quest> quests = new List<Quest>();
     public List<AmountQuest> amountQuests = new List<AmountQuest>();
     public List<ExploreAreaQuest> exploreAreaQuests = new List<ExploreAreaQuest>();
-    public static QuestManager instance;
+    private static QuestManager _instance;
 
     private void Awake()
     {
         //Singleton Code
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = this;
+            _instance = this;
         }
         else
         {
