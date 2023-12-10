@@ -34,17 +34,14 @@ public class QuestManager : MonoBehaviour
             // Add any specific logic for starting a quest
         }
     }
-    public void StartAmountQuest(string questName, int requiredItemCount)
+    public void StartAmountQuest(string questName)
     {
         AmountQuest quest = GetAmountQuestByName(questName);
 
         if (quest != null && !quest.isCompleted)
         {
-            Debug.Log("Amount Quest started: " + questName + ". Required item count: " + requiredItemCount);
+            Debug.Log("Amount Quest started: " + questName + ". Required item count: " + quest.requiredItemCount);
             // Add specific start quest logic
-
-            // Set the required item count for the quest
-            quest.requiredItemCount = requiredItemCount;
         }
     }
     public void StartExploreAreaQuest(string questName, string areaToExplore)

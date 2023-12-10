@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
-    //last dialogue text can be display if base dialogue already read
+    public bool dialogueEnded = false;
     public DialogueText[] dialogueTexts;
     public Actor[] actors;
 

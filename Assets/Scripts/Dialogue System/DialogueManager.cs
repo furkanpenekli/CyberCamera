@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,8 +26,11 @@ public class DialogueManager : MonoBehaviour
             NextMassage();
         }
 
-        // Set the active state of the current game object based on the '_isActive' flag
-        gameObject.SetActive(_isActive);
+        // Set the active state of the current components based on the '_isActive' flag
+        //actorSprite.GetComponent<GameObject>().SetActive(_isActive);
+        //actorName.GetComponent<GameObject>().SetActive(_isActive);
+        //dialogueText.GetComponent<GameObject>().SetActive(_isActive);
+        //dialogueBox.GetComponent<GameObject>().SetActive(_isActive);
     }
 
     public void OpenDialogue(DialogueText[] dialogueTexts, Actor[] actors)
