@@ -16,11 +16,13 @@ public class DialogueManager : MonoBehaviour
     int activeDialougeText = 0;
 
     private bool _isActive = false;
-    public bool isActive
+    private void Update()
     {
-        get { return _isActive; }
+        if (Input.GetKeyDown(KeyCode.E) && _isActive)
+        {
+            NextMassage();
+        }    
     }
-
 
     public void OpenDialogue(DialogueText[] dialogueTexts, Actor[] actors)
     {
@@ -29,7 +31,6 @@ public class DialogueManager : MonoBehaviour
         activeDialougeText = 0;
 
         _isActive = true;
-
         Debug.Log("Started dialogue.Loaded dialogue texts" + currentDialogueTexts);
         DisplayDialogueText();
     }
@@ -47,8 +48,7 @@ public class DialogueManager : MonoBehaviour
     public void NextMassage()
     {
         activeDialougeText++;
-        
-        if (activeDialougeText < currentDialogueTexts.Length)
+        if (activeDialougeText < currentDialogueTexts.Length && _isActive)
         {
             DisplayDialogueText();
         }

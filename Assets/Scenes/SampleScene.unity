@@ -2098,37 +2098,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1808252615}
   _yPosition: 0.4
---- !u!1 &705466396
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 705466398}
-  m_Layer: 0
-  m_Name: DialogueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &705466398
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705466396}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &939174052
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,8 +2107,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 939174053}
-  - component: {fileID: 939174055}
   - component: {fileID: 939174054}
+  - component: {fileID: 939174055}
   m_Layer: 0
   m_Name: DialogueTrigger
   m_TagString: Untagged
@@ -2219,7 +2188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09cecc3bbdd97aa4289a431c6de3a299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogue: {fileID: 0}
+  _dialogue: {fileID: 1691430581}
 --- !u!1 &1013900288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2293,6 +2262,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3523749762962947227, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
   m_PrefabInstance: {fileID: 4149661596195894526}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1691430581 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
+  m_PrefabInstance: {fileID: 4149661596195894526}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e6998382a1bdf46b76484f4c61a244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1808252615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1050739840083429328, guid: da2ebcfe3c6e231458995890cd2b3103, type: 3}
@@ -2390,6 +2370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8097187484116961298, guid: 9c662a0708e1a214aa58f7e207849dae, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e1daf72f76e0d0644bc69588bfd4beee, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2403,6 +2387,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
+      propertyPath: _colliderObject
+      value: 
+      objectReference: {fileID: 939174052}
     - target: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
       propertyPath: actors.Array.size
       value: 2
@@ -2574,5 +2562,4 @@ SceneRoots:
   - {fileID: 4149661596195894526}
   - {fileID: 3412365424519807873}
   - {fileID: 1013900291}
-  - {fileID: 705466398}
   - {fileID: 241187395}

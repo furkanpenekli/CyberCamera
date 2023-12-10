@@ -24,10 +24,7 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue()
     {
-        FindObjectOfType<DialogueManager>().OpenDialogue(dialogueTexts, actors);
-    }
-    public void NextDialogue()
-    {
-        FindObjectOfType<DialogueManager>().NextMassage();
+        FindObjectOfType<DialogueManager>().OpenDialogue(dialogueTexts,actors);
     }
 }
+
