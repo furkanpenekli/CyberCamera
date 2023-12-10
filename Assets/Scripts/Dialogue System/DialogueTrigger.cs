@@ -5,6 +5,8 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     [SerializeField]
+    private GameObject _interactButton;
+    [SerializeField]
     private Dialogue _dialogue;
 
     private bool isDialogueInProgress = false;
@@ -21,6 +23,7 @@ public class DialogueTrigger : MonoBehaviour
 
                 // Call the dialogue system
                 _dialogue.StartDialogue();
+                _interactButton.SetActive(false);
             }
         }
     }
@@ -28,6 +31,7 @@ public class DialogueTrigger : MonoBehaviour
     // Assuming you have a method to handle the end of the dialogue, you can reset the flag there
     public void EndDialogue()
     {
+        _interactButton.SetActive(true);
         isDialogueInProgress = false;
     }
 }
