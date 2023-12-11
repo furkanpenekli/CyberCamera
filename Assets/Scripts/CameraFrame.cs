@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraFrame : MonoBehaviour
 {
@@ -10,14 +9,19 @@ public class CameraFrame : MonoBehaviour
         {
             Debug.Log("Oyuncu Kamera Alanına Girdi!");
 
-            if (other.GetComponent<Hideable>().GetHidden())
-            {
-                Debug.Log("Gizlendin");
-            }
-            else if (!other.GetComponent<Hideable>().GetHidden())
+            if (!other.GetComponent<Hideable>().GetHidden())
             {
                 Debug.Log("Yandın");
+
+                // Sahneyi tekrar başlat
+                RestartCurrentScene();
             }
         }
+    }
+
+    private void RestartCurrentScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }

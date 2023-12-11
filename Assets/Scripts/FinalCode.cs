@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalCode : MonoBehaviour
 {
@@ -8,7 +7,14 @@ public class FinalCode : MonoBehaviour
     {
         if (collision.CompareTag("Player") && QuestManager.instance.GetAmountQuestByName("Anahtar").isCompleted)
         {
-            //oyun bitecek
+            // Oyun bittiğinde aktif sahneyi tekrar yükle
+            RestartCurrentScene();
         }
+    }
+
+    private void RestartCurrentScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }
