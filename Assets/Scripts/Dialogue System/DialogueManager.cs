@@ -8,6 +8,7 @@ using static Dialogue;
 
 public class DialogueManager : MonoBehaviour
 {
+    public Dialogue currentDialogue;
     public GameObject _base;
     public Image actorSprite;
     public Text actorName;
@@ -59,6 +60,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            currentDialogue.endDialogue = true;
             _isActive = false;
             Debug.Log("Dialogue ended!");
         }

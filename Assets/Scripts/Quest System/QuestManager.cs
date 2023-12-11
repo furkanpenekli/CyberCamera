@@ -8,14 +8,14 @@ public class QuestManager : MonoBehaviour
     public List<Quest> quests = new List<Quest>();
     public List<AmountQuest> amountQuests = new List<AmountQuest>();
     public List<ExploreAreaQuest> exploreAreaQuests = new List<ExploreAreaQuest>();
-    private static QuestManager _instance;
+    public static QuestManager instance;
 
     private void Awake()
     {
         //Singleton Code
-        if (_instance == null)
+        if (instance == null)
         {
-            _instance = this;
+            instance = this;
         }
         else
         {
@@ -27,19 +27,20 @@ public class QuestManager : MonoBehaviour
     public void StartQuest(string questName)
     {
         Quest quest = GetQuestByName(questName);
-
         if (quest != null && !quest.isCompleted)
         {
+            quest.startedQuest = true;
             Debug.Log("Quest started: " + questName);
             // Add any specific logic for starting a quest
         }
     }
+    
     public void StartAmountQuest(string questName)
     {
         AmountQuest quest = GetAmountQuestByName(questName);
-
         if (quest != null && !quest.isCompleted)
         {
+            quest.startedQuest = true;
             Debug.Log("Amount Quest started: " + questName + ". Required item count: " + quest.requiredItemCount);
             // Add specific start quest logic
         }
@@ -47,9 +48,9 @@ public class QuestManager : MonoBehaviour
     public void StartExploreAreaQuest(string questName, string areaToExplore)
     {
         ExploreAreaQuest quest = GetExploreAreaQuestByName(questName);
-
         if (quest != null && !quest.isCompleted)
         {
+            quest.startedQuest = true;
             Debug.Log("Explore Area Quest started: " + questName + ". Area to explore: " + areaToExplore);
         }
     }
@@ -57,7 +58,7 @@ public class QuestManager : MonoBehaviour
     //unique functions
     public void UpdateAmountQuestProgress(string questName, int amount)
     {
-        AmountQuest quest = GetQuestByName(questName) as AmountQuest;
+        AmountQuest quest = GetAmountQuestByName(questName);
 
         if (quest != null && !quest.isCompleted)
         {
@@ -66,7 +67,7 @@ public class QuestManager : MonoBehaviour
             // Check if the quest is now completed
             if (quest.currentItemCount >= quest.requiredItemCount)
             {
-                CompleteQuest(questName);
+                CompleteAmountQuest(questName);
             }
         }
     }
@@ -75,7 +76,7 @@ public class QuestManager : MonoBehaviour
     {
         Quest quest = GetQuestByName(questName);
 
-        if (quest != null && !quest.isCompleted)
+        if (quest.startedQuest && quest != null && !quest.isCompleted)
         {
             quest.isCompleted = true;
             Debug.Log("Quest completed: " + questName);
@@ -88,7 +89,7 @@ public class QuestManager : MonoBehaviour
     {
         AmountQuest quest = GetAmountQuestByName(questName);
 
-        if (quest != null && !quest.isCompleted)
+        if (quest.startedQuest && quest != null && !quest.isCompleted)
         {
             quest.isCompleted = true;
             Debug.Log("Quest completed: " + questName);
@@ -101,7 +102,7 @@ public class QuestManager : MonoBehaviour
     {
         ExploreAreaQuest quest = GetExploreAreaQuestByName(questName);
 
-        if (quest != null && !quest.isCompleted)
+        if (quest.startedQuest && quest != null && !quest.isCompleted)
         {
             quest.isCompleted = true;
             Debug.Log("Quest completed: " + questName);
@@ -111,15 +112,15 @@ public class QuestManager : MonoBehaviour
         }
     }
     //Get name functions
-    private Quest GetQuestByName(string questName)
+    public Quest GetQuestByName(string questName)
     {
         return quests.Find(quest => quest.questName == questName);
     }
-    private AmountQuest GetAmountQuestByName(string questName)
+    public AmountQuest GetAmountQuestByName(string questName)
     {
         return amountQuests.Find(quest => quest.questName == questName);
     }
-    private ExploreAreaQuest GetExploreAreaQuestByName(string questName)
+    public ExploreAreaQuest GetExploreAreaQuestByName(string questName)
     {
         return exploreAreaQuests.Find(quest => quest.questName == questName);
     }
