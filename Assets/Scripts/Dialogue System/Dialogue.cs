@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
-    public bool dialogueEnded = false;
+    public Dialogue nextDialogue;
+    public string _amountQuestName;
+
     public DialogueText[] dialogueTexts;
     public Actor[] actors;
 
@@ -23,9 +25,22 @@ public class Dialogue : MonoBehaviour
         public Sprite sprite;
     }
 
+    public bool endDialogue = false;
     public void StartDialogue()
     {
-        FindObjectOfType<DialogueManager>().OpenDialogue(dialogueTexts,actors);
+        if (_amountQuestName != null)
+        {
+            if (!QuestManager.instance.GetAmountQuestByName(_amountQuestName).isCompleted)
+            {
+                FindObjectOfType<DialogueManager>().OpenDialogue(dialogueTexts, actors);
+                QuestManager.instance.StartAmountQuest(_amountQuestName);
+            }
+
+        }
+        else
+        {
+            FindObjectOfType<DialogueManager>().OpenDialogue(dialogueTexts, actors);
+        }
     }
 }
 

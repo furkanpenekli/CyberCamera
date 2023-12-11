@@ -33753,6 +33753,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &624085161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6074758509197805646, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
+  m_PrefabInstance: {fileID: 4149661596195894526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &808312166 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3322477915851642325, guid: da2ebcfe3c6e231458995890cd2b3103, type: 3}
@@ -33886,24 +33891,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quests: []
   amountQuests:
-  - questName: Anahtar
-    description: 
+  - startedQuest: 0
     isCompleted: 0
+    questName: Anahtar
+    description: 
     requiredItemCount: 1
     currentItemCount: 0
-  - questName: Atom
-    description: 
+  - startedQuest: 0
     isCompleted: 0
+    questName: Atom
+    description: 
     requiredItemCount: 1
     currentItemCount: 0
-  - questName: Tup
-    description: 
+  - startedQuest: 0
     isCompleted: 0
+    questName: Tup
+    description: 
     requiredItemCount: 1
     currentItemCount: 0
-  - questName: Tahta
-    description: 
+  - startedQuest: 0
     isCompleted: 0
+    questName: Tahta
+    description: 
     requiredItemCount: 1
     currentItemCount: 0
   exploreAreaQuests: []
@@ -33990,6 +33999,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1148384679
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4434012035440942374, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.212
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434012035440942374, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.30538458
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434012035440942374, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434012035440942374, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434012035440942374, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434012035440942374, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434012035440942374, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434012035440942374, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434012035440942374, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4434012035440942374, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847543942589823082, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      propertyPath: m_Name
+      value: Wrench
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4847543942589823082, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1566805505}
+    - targetCorrespondingSourceObject: {fileID: 4847543942589823082, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1566805508}
+  m_SourcePrefab: {fileID: 100100000, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
 --- !u!1 &1469559645
 GameObject:
   m_ObjectHideFlags: 0
@@ -34027,6 +34099,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4904303646605687823, guid: a0defbaddeacd8341b41da16f83e5ad2, type: 3}
   m_PrefabInstance: {fileID: 554631967748856554}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1566805504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4847543942589823082, guid: 697c4893917957e46b31224b5f82bce2, type: 3}
+  m_PrefabInstance: {fileID: 1148384679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1566805505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566805504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3dfebdba096cc747be8109e7d9d5cef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _amountQuestName: Anahtar
+--- !u!61 &1566805508
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566805504}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.32, y: 0.32}
+  m_EdgeRadius: 0
 --- !u!4 &1691430580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3523749762962947227, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
@@ -34037,12 +34172,37 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
   m_PrefabInstance: {fileID: 4149661596195894526}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 624085161}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7e6998382a1bdf46b76484f4c61a244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1691430585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624085161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e6998382a1bdf46b76484f4c61a244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextDialogue: {fileID: 0}
+  _amountQuestName: 
+  dialogueTexts:
+  - actorID: 0
+    text: "Anahtar\u0131 getirdim Joe"
+  - actorID: 1
+    text: Tebrik ederim Eliza!
+  actors:
+  - name: Eliza
+    sprite: {fileID: 21300000, guid: 07a732c87086e294f8bbce94a661ba07, type: 3}
+  - name: Joe
+    sprite: {fileID: 21300000, guid: e1daf72f76e0d0644bc69588bfd4beee, type: 3}
+  endDialogue: 0
 --- !u!4 &1808252615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1050739840083429328, guid: da2ebcfe3c6e231458995890cd2b3103, type: 3}
@@ -34178,6 +34338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bd755951aa0d246be6ebf30d0accbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentDialogue: {fileID: 0}
   _base: {fileID: 528434732}
   actorSprite: {fileID: 6847113397903018899}
   actorName: {fileID: 2946507323725867441}
@@ -34374,10 +34535,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 584626096479816427, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
+      propertyPath: nextDialogue
+      value: 
+      objectReference: {fileID: 1691430585}
+    - target: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
+      propertyPath: _nextDialogue
+      value: 
+      objectReference: {fileID: 1691430585}
     - target: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
       propertyPath: _colliderObject
       value: 
       objectReference: {fileID: 939174052}
+    - target: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
+      propertyPath: amountQuestName
+      value: Anahtar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
+      propertyPath: _amountQuestName
+      value: Anahtar
+      objectReference: {fileID: 0}
     - target: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
       propertyPath: actors.Array.size
       value: 2
@@ -34412,7 +34593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
       propertyPath: dialogueTexts.Array.data[2].text
-      value: "Bana ingiliz anahtar\u0131 getirmelisin"
+      value: "Bana ingiliz anahtar\u0131 soldan al\u0131p sa\u011Fdan ka\xE7mal\u0131s\u0131n"
       objectReference: {fileID: 0}
     - target: {fileID: 1087039763331807919, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
       propertyPath: dialogueTexts.Array.data[3].text
@@ -34493,7 +34674,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3523749762962947227, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
       insertIndex: -1
       addedObject: {fileID: 939174053}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6074758509197805646, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1691430585}
   m_SourcePrefab: {fileID: 100100000, guid: 307b0d2e4fb56f040a9d59272320f321, type: 3}
 --- !u!1001 &4298252982435716021
 PrefabInstance:
@@ -34898,13 +35082,14 @@ GameObject:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 992715643}
   - {fileID: 519420032}
   - {fileID: 9091535025490368356}
   - {fileID: 4149661596195894526}
   - {fileID: 3607934241638883063}
   - {fileID: 1013900291}
-  - {fileID: 992715643}
   - {fileID: 241187395}
   - {fileID: 8154224719293358439}
   - {fileID: 4298252982435716021}
   - {fileID: 1469559646}
+  - {fileID: 1148384679}
