@@ -8,7 +8,8 @@ using static Dialogue;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Sprite actorSprite;
+    public GameObject _base;
+    public Image actorSprite;
     public Text actorName;
     public Text dialogueText;
     public GameObject dialogueBox;
@@ -25,12 +26,7 @@ public class DialogueManager : MonoBehaviour
         {
             NextMassage();
         }
-
-        // Set the active state of the current components based on the '_isActive' flag
-        //actorSprite.GetComponent<GameObject>().SetActive(_isActive);
-        //actorName.GetComponent<GameObject>().SetActive(_isActive);
-        //dialogueText.GetComponent<GameObject>().SetActive(_isActive);
-        //dialogueBox.GetComponent<GameObject>().SetActive(_isActive);
+        _base.SetActive(_isActive);
     }
 
     public void OpenDialogue(DialogueText[] dialogueTexts, Actor[] actors)
@@ -50,15 +46,14 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = dialogueTextToDisplay.text;
 
         Actor actorToDisplay = currentActors[dialogueTextToDisplay.actorID];
-        actorSprite = actorToDisplay.sprite;
+        actorSprite.sprite = actorToDisplay.sprite;
         actorName.text = actorToDisplay.name;
     }
 
     public void NextMassage()
     {
         activeDialougeText++;
-        //last dialogue text can be display if base dialogue already read => currentDialogueTexts.Length - 1
-        if (activeDialougeText < currentDialogueTexts.Length - 1 && _isActive)
+        if (activeDialougeText < currentDialogueTexts.Length && _isActive)
         {
             DisplayDialogueText();
         }

@@ -23,7 +23,10 @@ public class DialogueTrigger : MonoBehaviour
 
                 // Call the dialogue system
                 _dialogue.StartDialogue();
-                _interactButton.SetActive(false);
+                if (_interactButton != null)
+                {
+                    _interactButton.SetActive(false);
+                }
             }
         }
     }

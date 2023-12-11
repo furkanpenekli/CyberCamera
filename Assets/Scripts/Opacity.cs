@@ -14,6 +14,7 @@ public class Opacity : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -23,6 +24,7 @@ public class Opacity : MonoBehaviour
             spriteRenderer.color = newColor;
 
             concealment = true;
+            other.GetComponent<Hideable>().SetHidden(concealment);
         }
     }
 
@@ -31,7 +33,9 @@ public class Opacity : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             spriteRenderer.color = originalColor;
+
             concealment = false;
+            other.GetComponent<Hideable>().SetHidden(concealment);
         }
     }
 }

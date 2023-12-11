@@ -54,6 +54,15 @@ public class CyberCamera : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Oyuncu Kamera Alanına Girdi!");
+
+            if (other.GetComponent<Hideable>().GetHidden())
+            {
+                Debug.Log("Gizlendin");
+            }
+            else if (!other.GetComponent<Hideable>().GetHidden())
+            {
+                Debug.Log("Yandın");
+            }
         }
     }
 }

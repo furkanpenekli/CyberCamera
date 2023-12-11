@@ -14,7 +14,6 @@ public class Movement : MonoBehaviour
     private Animator _animator;
     [SerializeField]
     private float _animationSpeed = 0.1f;
-    private float _firstAnimationSpeed;
     private bool isGrounded;
 
     [NonSerialized]
@@ -25,8 +24,6 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
-        _firstAnimationSpeed = _animationSpeed;
-
         _rb = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();

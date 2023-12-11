@@ -77,4 +77,22 @@ public class Robocop : MonoBehaviour
         Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
         Gizmos.DrawLine(pointA.transform.position, pointB.transform.position);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision == null)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                if (collision.GetComponent<Hideable>().GetHidden())
+                {
+                    Debug.Log("Gizlisin");
+                }
+            }
+            else if (!collision.GetComponent<Hideable>().GetHidden())
+            {
+                Debug.Log("Yandin");
+            }
+        }
+    }
 }
