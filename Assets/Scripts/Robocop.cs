@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Robocop : MonoBehaviour
 {
@@ -80,19 +81,23 @@ public class Robocop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision == null)
+        if (collision.CompareTag("Player"))
         {
-            if (collision.CompareTag("Player"))
+            if (collision.GetComponent<Hideable>().GetHidden())
             {
-                if (collision.GetComponent<Hideable>().GetHidden())
-                {
-                    Debug.Log("Gizlisin");
-                }
+                Debug.Log("Gizlisin");
             }
             else if (!collision.GetComponent<Hideable>().GetHidden())
             {
                 Debug.Log("Yandin");
+                RestartCurrentScene();
             }
         }
+    }
+
+    void RestartCurrentScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }
