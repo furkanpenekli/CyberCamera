@@ -91,7 +91,6 @@ public class Robocop : MonoBehaviour
             {
                 Debug.Log("Yandin");
                 RestartCurrentScene();
-                //StartCoroutine(RestartSceneAfterDelay(5.0f));
             }
         }
     }
@@ -101,14 +100,4 @@ public class Robocop : MonoBehaviour
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
     }
-
-    /*private IEnumerator RestartSceneAfterDelay(float delay)
-    {
-        Debug.Log("Sahne Yeniden başlatılıyor...");
-
-        // Wait 2 second
-        yield return new WaitForSeconds(delay);
-        RestartCurrentScene();
-    }
-    */
 }
